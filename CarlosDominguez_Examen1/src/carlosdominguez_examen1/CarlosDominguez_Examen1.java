@@ -16,32 +16,40 @@ public class CarlosDominguez_Examen1 {
             int opcion = brazil.nextInt();
             switch (opcion) {
                 case 1:
+                    brazil.nextLine();
                     Historialdebusqueda += "-Ejercicos de String";
-                    boolean out2 = true;
-                    while (out2 == true) {
-                        System.out.println("*******Submenu********");
-                        System.out.println("1. Ejercicio 1 String");
-                        System.out.println("2. Ejercicio 2 String ");
-                        System.out.println("3. Salir del Submenu");
-                        int opcion2 = brazil.nextInt();
-                        switch (opcion2) {
-                            case 1:
-                                Historialdebusqueda += "-Ejercicio 1 String";
-                                
-                                break;
-                            case 2:
-                                Historialdebusqueda += "-Ejercicio 2 String";
-                                
-                                break;
-                            case 3:
-                                out2=false;
-                                System.out.println("Saliendo del submenu.....");
-                                break;    
-                            default:
-                                System.out.println("La opcion no es valida");
+                    System.out.println("Ingrese una cadena");
+                    String Cadenasinevaluar = brazil.nextLine();
+                    int sizeString = Cadenasinevaluar.length();
+                    if (sizeString % 2 != 0) {
+                        int mitaddelstring = Cadenasinevaluar.length()/2;
+                        String mitad1 = Cadenasinevaluar.substring(0, mitaddelstring);
+                        String mitad2 = Cadenasinevaluar.substring(mitaddelstring, Cadenasinevaluar.length());
+                        System.out.println("Cadena Ingresada : "+Cadenasinevaluar);
+                        System.out.println("Primera mitad : " + mitad1);
+                        System.out.println("Segunda mitad : " + mitad2);
+                        System.out.println("Cadena Resultante : " + mitad2 + mitad1);
+                        System.out.println("");
+                    }else{
+                        int mitaddelstring = Cadenasinevaluar.length()/2;
+                        String mitad1 = Cadenasinevaluar.substring(0, mitaddelstring);
+                        String mitad2 = Cadenasinevaluar.substring(mitaddelstring, Cadenasinevaluar.length());
+                        String modificada = "";
+                        for (int i = 0; i < mitaddelstring; i++) {
+                            modificada += mitad1.charAt(i);
+                            modificada += "-";
+                            modificada += mitad2.charAt(i);
+                            if (i == mitaddelstring-1 ) {
+                                modificada += " ";
+                            }else{
+                                modificada += "-";
+                            }
                         }
+                        System.out.println("Primera mitad : " + mitad1);
+                        System.out.println("Segunda mitad : " + mitad2);
+                        System.out.println("Cadena Resultante : "+ modificada);    
+                        System.out.println("");
                     }
-                    
                     break;
                 case 2:
                     Historialdebusqueda += "-Respuestas de Preguntas";
